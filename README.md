@@ -6,6 +6,7 @@ It interfaces directly with the Boursorama website (no server middleware)
 ![My example app](http://files.sauray.com/images/Screenshot_1517167834.png)
 
 ## Features
+It's very new so features are limited.
 * Login
 * Get accounts
 * Get movements
