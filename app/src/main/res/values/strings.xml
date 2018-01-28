@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Boursorama</string>
+
+    <string name="account_key">account</string>
+    <string name="accounts_key">accounts</string>
+    <string name="bank_accounts">Bank accounts</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+
+    <string name="identifier">Identifier</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="checking_credentials">Checking credentials</string>
+    <string name="credentials_incorrect">Your credentials are incorrect</string>
+</resources>

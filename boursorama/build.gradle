@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 26
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BOURSORAMA_ROOT_URL", "\"https://clients.boursorama.com\""
+        buildConfigField "String", "BOURSORAMA_HOME", "\"\$/\""
+        buildConfigField "String", "BOURSORAMA_LOGIN", "\"/connexion/\""
+        buildConfigField "String", "BOURSORAMA_AUTHENTICATION", "\"/securisation\""
+        buildConfigField "String", "BOURSORAMA_VIRTUAL_KEYBOARD", "\"/connexion/clavier-virtuel\""
+        buildConfigField "String", "BOURSORAMA_ACCOUNTS", "\"/dashboard/comptes?rumroute=dashboard.accounts/budget\""
+        buildConfigField "String", "BOURSORAMA_BUDGET", "\"/mon-budget/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation ('com.android.support.test.espresso:espresso-core:3.0.1') {
+        exclude group: 'com.google.code.findbugs'
+    }
+
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'org.jsoup:jsoup:1.11.2'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.9"
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    //compile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.4'
+
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
